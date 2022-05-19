@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息填写页</title>
+    <style>
+        body {
+            width: calc(100% - 20px);
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 10px;
+            background: #efeff4;
+            cursor: default;
+            font-family: -apple-system, Arial, sans-serif;
+        }
+        
+        input {
+            margin-top: 8px;
+            margin-left: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="./js/userinfosetter.js"></script>
+</head>
+
+<body>
+    <div>
+        <b style="display: flex;justify-content:center;align-items:Center;">Hypt Out</b>
+        <p>Just a fucking test!</p>
+        <p>© Ma1akAs 2022</p>
+        <p>© Version 0.0.1</p>
+        <p>"This is a tools to help student form hypt out of school"</p>
+        <input type="text" id="stuName" placeholder="学生名"><br>
+        <input type="text" id="stuId" placeholder="卡号"><br>
+        <input type="text" id="departments" placeholder="学院"><br>
+        <input type="text" id="class" placeholder="班级"><br>
+        <input type="text" id="phone" placeholder="联系电话"><br>
+        <input type="Date" id="outTime1" placeholder="外出开始时间选择">
+        <p style="margin: 0;padding: 0;display:inline">to</p>
+        <input type="Date" id="outTime2" placeholder="外出结束时间选择"><br>
+        <input type="text" id="location" placeholder="前往目的地"><br>
+        <input type="text" id="outReason" placeholder="外出事由"><br>
+        <input type="text" id="locationDetail" placeholder="具体地址"><br>
+        <input type="text" id="applyTime" placeholder="申请时间"><br>
+        <input type="text" id="teacherName" placeholder="辅导员姓名"><br>
+        <button onclick="login()" style="margin-top: 8px;margin-left: 10px;">生成</button>
+
+
+
+    </div>
+</body>
+
+</html>
