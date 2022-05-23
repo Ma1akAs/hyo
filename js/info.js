@@ -66,21 +66,14 @@ function setText(cookieName, id) {
     document.getElementById(id).innerText = setter;
 }
 
-//点击获取按钮之后调用的函数
 function applySet() {
-    setText("stuName", "XM");
-    setText("stuId", "XH");
-    setText("departments", "XY");
-    setText("major", "ZY");
-    setText("stuClass", "BJ");
-    setText("phone", "LXDH");
-    setText("outTime1", "KSSJ");
-    setText("outTime2", "JSSJ");
-    setText("Location", "MDD");
-    setText("outReason", "WCSY");
-    setText("locationDetail", "BZ");
-    //setText("applyTime", "AT");
-    //setText("teacherName", "JSM");
+    const index_id = ['stuName', 'stuId', 'departments', 'major', 'stuClass', 'phone', 'outTime1',
+        'outTime2', 'locate', 'outReason', 'locationDetail'
+    ];
+    const info_id = ['XM', 'XH', 'XY', 'ZY', 'BJ', 'LXDH', 'KSSJ', 'JSSJ', 'MDD', 'WCSY', 'BZ'];
+    for (i = 0; i < index_id.length; i++) {
+        setText(index_id[i], info_id[i]);
+    }
     let teacherInfo = getCookie("teacherName") + "/教职工/教学部门/" + getCookie("departments");
     document.getElementById("JSM").innerText = teacherInfo;
     fixApplyTime();
