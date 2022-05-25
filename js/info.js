@@ -34,6 +34,10 @@ function getCookie(name) {
     return null;
 }
 
+//用于格式化时间，用例如下：
+//formatDate(new Date().getTime());2017-05-12 10:05:44
+//formatDate(new Date().getTime(),'YY年MM月DD日');2017年05月12日
+//formatDate(new Date().getTime(),'今天是YY/MM/DD hh:mm:ss');今天是2017/05/12 10:07:45
 function formatDate(time, format = 'YY-MM-DD hh:mm:ss') {
     var date = new Date(time);
 
@@ -56,9 +60,6 @@ function formatDate(time, format = 'YY-MM-DD hh:mm:ss') {
 
     return newTime;
 }
-//formatDate(new Date().getTime());2017-05-12 10:05:44
-//formatDate(new Date().getTime(),'YY年MM月DD日');2017年05月12日
-//formatDate(new Date().getTime(),'今天是YY/MM/DD hh:mm:ss');今天是2017/05/12 10:07:45
 
 //传入cookie名、目标id来修改目标元素内容
 function setText(cookieName, id) {
@@ -85,11 +86,10 @@ function fixApplyTime() {
     let hm = getCookie("applyTime");
     let ym = getCookie("outTime1");
     var none = " ";
-    var fixedApplyTime = ym.concat(none, hm);
-    document.getElementById("AT").innerText = fixedApplyTime;
+    var passTime = ym.concat(none, hm);
+    document.getElementById("AT").innerText = passTime;
     //设置审批时间为申请时间的30分钟后
-    var fixedApplyTimeTimestamp = new Date(fixedApplyTime);
-    fixedApplyTimeTimestamp.setMinutes(fixedApplyTimeTimestamp.getMinutes() + 41)
-    var voa = formatDate(new Date(fixedApplyTimeTimestamp).getTime(), 'YY-MM-DD hh:mm');
-    document.getElementById("JSTGSJ").innerText = voa;
+    var passTimestamp = new Date(passTime);
+    var finPassTime = formatDate(new Date(passTimestamp.setMinutes(passTimestamp.getMinutes() + 41)).getTime(), 'YY-MM-DD hh:mm');
+    document.getElementById("JSTGSJ").innerText = finPassTime;
 }
