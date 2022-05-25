@@ -29,9 +29,3 @@ input {
 button {
     margin-top: 10px;
 }
-
-b {
-    display: flex;
-    justify-content: center;
-    align-items: Center;
-}
